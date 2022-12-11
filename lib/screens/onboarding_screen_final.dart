@@ -90,7 +90,7 @@ class OnboardingfinalScreen extends StatelessWidget {
                           fontFamily: GoogleFonts.poppins().fontFamily,
                           shadows: const <Shadow>[
                             Shadow(
-                                offset: Offset(0.5, 3.2),
+                                offset: Offset(0.5, 2),
                                 blurRadius: 3,
                                 color: Colors.black38)
                           ]),

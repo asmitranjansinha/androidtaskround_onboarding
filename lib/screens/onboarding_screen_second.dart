@@ -1,7 +1,6 @@
 import 'package:androidtaskround_onboarding/screens/onboarding_screen_final.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
 
 import '../widgets/onboarding_widget.dart';
 
@@ -21,7 +20,7 @@ class OnboardingScreen2 extends StatelessWidget {
           "A balance between body and mind is the key to happy life. take some moment to meditate or to self evaluate your mental health with the resources curated by us",
       ontap: () {
         Get.to(() => const OnboardingfinalScreen(),
-            transition: Transition.rightToLeftWithFade);
+            transition: Transition.rightToLeft);
       },
     );
   }

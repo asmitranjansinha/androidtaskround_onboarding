@@ -1,8 +1,6 @@
 import 'package:androidtaskround_onboarding/screens/onboarding_screen_second.dart';
 import 'package:androidtaskround_onboarding/widgets/onboarding_widget.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class OnboardingScreen1 extends StatelessWidget {
@@ -21,7 +19,7 @@ class OnboardingScreen1 extends StatelessWidget {
           "Everyone feels stressed from time to time and don’t know how to deal with it. We have curated many different ways to help you cope up with stress. Find people with whom you can talk, experts to assist you and meditation tricks to ease up your mind",
       ontap: () {
         Get.to(() => const OnboardingScreen2(),
-            transition: Transition.rightToLeftWithFade);
+            transition: Transition.rightToLeft);
       },
     );
   }

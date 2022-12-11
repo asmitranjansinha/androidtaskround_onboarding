@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -102,7 +104,7 @@ class Onboarding extends StatelessWidget {
                           fontFamily: GoogleFonts.poppins().fontFamily,
                           shadows: const <Shadow>[
                             Shadow(
-                                offset: Offset(0.5, 3.2),
+                                offset: Offset(0.5, 2),
                                 blurRadius: 3,
                                 color: Colors.black38)
                           ]),
@@ -130,7 +132,7 @@ class Onboarding extends StatelessWidget {
                                 SizedBox(
                                   height: size.height / 5.1,
                                 ),
-                                GestureDetector(
+                                InkWell(
                                     onTap: ontap,
                                     child: Padding(
                                       padding: const EdgeInsets.all(20.0),
