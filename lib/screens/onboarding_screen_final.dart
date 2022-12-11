@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Onboarding extends StatelessWidget {
-  final image;
-  final headText;
-  final circleColor1;
-  final circleColor2;
-  final circleColor3;
-  final descrpText;
-  final ontap;
-  const Onboarding(
-      {super.key,
-      this.image,
-      this.headText,
-      this.circleColor1,
-      this.circleColor2,
-      this.circleColor3,
-      this.descrpText,
-      this.ontap});
+class OnboardingfinalScreen extends StatelessWidget {
+  const OnboardingfinalScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +26,11 @@ class Onboarding extends StatelessWidget {
             Container(
               height: size.height / 1.8,
               width: size.width,
-              decoration: BoxDecoration(
-                  image: DecorationImage(fit: BoxFit.cover, image: image)),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                          "assets/images/undraw_conversation_h12g 3.png"))),
             ),
             Stack(
               children: [
@@ -67,7 +55,7 @@ class Onboarding extends StatelessWidget {
                           height: 15,
                           width: 15,
                           decoration: BoxDecoration(
-                              color: circleColor1,
+                              color: const Color(0XFF1E0368),
                               borderRadius: BorderRadius.circular(1000)),
                         ),
                         SizedBox(
@@ -77,7 +65,7 @@ class Onboarding extends StatelessWidget {
                           height: 15,
                           width: 15,
                           decoration: BoxDecoration(
-                              color: circleColor2,
+                              color: const Color(0XFF1E0368),
                               borderRadius: BorderRadius.circular(1000)),
                         ),
                         SizedBox(
@@ -87,16 +75,16 @@ class Onboarding extends StatelessWidget {
                           height: 15,
                           width: 15,
                           decoration: BoxDecoration(
-                              color: circleColor3,
+                              color: const Color(0XFF3600D0),
                               borderRadius: BorderRadius.circular(1000)),
                         )
                       ],
                     ),
                     SizedBox(height: size.height / 65),
                     Text(
-                      headText,
+                      "Psychotherapy",
                       style: TextStyle(
-                          color: Color(0XFF1C006A),
+                          color: const Color(0XFF1C006A),
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                           fontFamily: GoogleFonts.poppins().fontFamily,
@@ -110,47 +98,46 @@ class Onboarding extends StatelessWidget {
                     SizedBox(
                       height: size.height / 80,
                     ),
-                    Stack(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(
-                            descrpText,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 21,
-                                fontFamily: GoogleFonts.poppins().fontFamily),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Column(
-                              children: [
-                                SizedBox(
-                                  height: size.height / 5.1,
-                                ),
-                                GestureDetector(
-                                    onTap: ontap,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: Image.asset(
-                                        "assets/images/arrow_circle_right.png",
-                                        scale: 1.12,
-                                      ),
-                                    )),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    )
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        "Psychotherapy is teaching new ways of thinking and behaving. It aims at changing habits that may cause depression. Connect with the experts to clear out your mind and get the right advices.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 21,
+                            fontFamily: GoogleFonts.poppins().fontFamily),
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height / 70,
+                    ),
+                    getStartedButton(context)
                   ],
                 )
               ],
             )
           ],
         )),
+      ),
+    );
+  }
+
+  Container getStartedButton(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height / 13.5,
+      width: MediaQuery.of(context).size.width / 1.22,
+      decoration: BoxDecoration(
+          color: const Color(0XFF1E0368),
+          borderRadius: BorderRadius.circular(50)),
+      child: Center(
+        child: Text(
+          "Get Started",
+          style: TextStyle(
+              color: const Color(0XFFFFFFFF),
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              fontFamily: GoogleFonts.inter().fontFamily),
+        ),
       ),
     );
   }

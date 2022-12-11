@@ -1,4 +1,7 @@
+import 'package:androidtaskround_onboarding/screens/onboarding_screen_final.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 
 import '../widgets/onboarding_widget.dart';
 
@@ -7,15 +10,19 @@ class OnboardingScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Onboarding(
-      image: AssetImage(
+    return Onboarding(
+      image: const AssetImage(
           "assets/images/woman-doing-meditation-in-metaverse-5342825-4491860 3.png"),
-      circleColor1: Color(0XFF1E0368),
-      circleColor2: Color(0XFF3600D0),
-      circleColor3: Color(0XFF1E0368),
+      circleColor1: const Color(0XFF1E0368),
+      circleColor2: const Color(0XFF3600D0),
+      circleColor3: const Color(0XFF1E0368),
       headText: "Healthy body, Healthy mind",
       descrpText:
           "A balance between body and mind is the key to happy life. take some moment to meditate or to self evaluate your mental health with the resources curated by us",
+      ontap: () {
+        Get.to(() => const OnboardingfinalScreen(),
+            transition: Transition.rightToLeftWithFade);
+      },
     );
   }
 }
