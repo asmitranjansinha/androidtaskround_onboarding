@@ -2,7 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Onboarding extends StatelessWidget {
-  const Onboarding({super.key});
+  final image;
+  final headText;
+  final circleColor1;
+  final circleColor2;
+  final circleColor3;
+  final descrpText;
+  final ontap;
+  const Onboarding(
+      {super.key,
+      this.image,
+      this.headText,
+      this.circleColor1,
+      this.circleColor2,
+      this.circleColor3,
+      this.descrpText,
+      this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +39,10 @@ class Onboarding extends StatelessWidget {
             child: Column(
           children: [
             Container(
-              height: size.height / 1.7,
+              height: size.height / 1.8,
               width: size.width,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                          "assets/images/1575284384-removebg-preview 2.png"))),
+              decoration: BoxDecoration(
+                  image: DecorationImage(fit: BoxFit.cover, image: image)),
             ),
             Stack(
               children: [
@@ -40,7 +52,7 @@ class Onboarding extends StatelessWidget {
                       topRight: Radius.circular(50)),
                   child: Container(
                     color: const Color(0XFFFFFFFF),
-                    height: size.height / 2.767999,
+                    height: size.height / 2.53838,
                   ),
                 ),
                 Column(
@@ -55,7 +67,7 @@ class Onboarding extends StatelessWidget {
                           height: 15,
                           width: 15,
                           decoration: BoxDecoration(
-                              color: Color(0XFF3600D0),
+                              color: circleColor1,
                               borderRadius: BorderRadius.circular(1000)),
                         ),
                         SizedBox(
@@ -65,7 +77,7 @@ class Onboarding extends StatelessWidget {
                           height: 15,
                           width: 15,
                           decoration: BoxDecoration(
-                              color: Color(0XFF3600D0),
+                              color: circleColor2,
                               borderRadius: BorderRadius.circular(1000)),
                         ),
                         SizedBox(
@@ -75,14 +87,14 @@ class Onboarding extends StatelessWidget {
                           height: 15,
                           width: 15,
                           decoration: BoxDecoration(
-                              color: Color(0XFF3600D0),
+                              color: circleColor3,
                               borderRadius: BorderRadius.circular(1000)),
                         )
                       ],
                     ),
                     SizedBox(height: size.height / 65),
                     Text(
-                      "Feeling Stressed?",
+                      headText,
                       style: TextStyle(
                           color: Color(0XFF1C006A),
                           fontSize: 26,
@@ -101,12 +113,32 @@ class Onboarding extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
-                        "Everyone feels stressed from time to time and don’t know how to deal with it. We have curated many different ways to help you cope up with stress. Find people with whom you can talk, experts to assist you and meditation tricks to ease up your mind",
+                        descrpText,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 21,
                             fontFamily: GoogleFonts.poppins().fontFamily),
                       ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            ontap;
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(1.4),
+                            child: Image.asset(
+                              "assets/images/arrow_circle_right.png",
+                              scale: 1.3,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: size.width / 21,
+                        )
+                      ],
                     )
                   ],
                 )

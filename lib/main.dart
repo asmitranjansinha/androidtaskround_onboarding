@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Android Task Round',
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen(),
+      home: OnboardingScreen1(),
     );
   }
 }
